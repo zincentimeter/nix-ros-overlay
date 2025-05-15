@@ -219,4 +219,9 @@ in with lib; {
     NIX_CFLAGS_COMPILE = toString [ "-Wno-error=array-bounds" ];
   });
 
+  nav2-lifecycle-manager = rosSuper.nav2-lifecycle-manager.overrideAttrs({
+    ...
+  }: {
+    NIX_CFLAGS_COMPILE = toString [ "-Wno-error=maybe-uninitialized" ];
+  });
 }
