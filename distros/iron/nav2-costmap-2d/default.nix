@@ -13,8 +13,6 @@ buildRosPackage {
     sha256 = "a783472d30b4b063c68a722f33ce86a7f939729dbf4e46cb3774282efe3e3dab";
   };
 
-  patches = [ ./fix_labels_init.patch ];
-
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake nav2-common ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common launch launch-testing nav2-lifecycle-manager nav2-map-server ];
