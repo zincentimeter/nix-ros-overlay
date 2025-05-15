@@ -226,4 +226,9 @@ in with lib; {
     NIX_CFLAGS_COMPILE = toString [ "-Wno-error=maybe-uninitialized" ];
   });
 
+  nav2-bt-navigator = rosSuper.nav2-bt-navigator.overrideAttrs({
+    ...
+  }: {
+    NIX_CFLAGS_COMPILE = toString [ "-Wno-error=maybe-uninitialized" ];
+  });
 }
