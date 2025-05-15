@@ -174,7 +174,7 @@ in with lib; {
   nav2-behaviors = rosSuper.nav2-behaviors.overrideAttrs({
     ...
   }: {
-    NIX_CFLAGS_COMPILE = toString [ "-Wno-error=array-bounds" "-Wno-error=maybe-uninitialized" ];
+    NIX_CFLAGS_COMPILE = toString [ "-Wno-error=array-bounds" "-Wno-error=maybe-uninitialized" "-Wno-error=uninitialized" ];
   });
 
   nav2-behavior-tree = rosSuper.nav2-behavior-tree.overrideAttrs({
@@ -224,4 +224,5 @@ in with lib; {
   }: {
     NIX_CFLAGS_COMPILE = toString [ "-Wno-error=maybe-uninitialized" ];
   });
+
 }
