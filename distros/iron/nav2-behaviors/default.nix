@@ -13,6 +13,8 @@ buildRosPackage {
     sha256 = "7c85390faa43cf65bb280a43827d10da807777c992f98c5255459e95c0a4d122";
   };
 
+  patches = [ ./fix_uninit.patch ];
+
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake nav2-common tf2 tf2-geometry-msgs ];
   checkInputs = [ ament-cmake-gtest ament-lint-auto ament-lint-common ];
