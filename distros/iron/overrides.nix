@@ -216,7 +216,7 @@ in with lib; {
   nav2-regulated-pure-pursuit-controller = rosSuper.nav2-regulated-pure-pursuit-controller.overrideAttrs({
     ...
   }: {
-    NIX_CFLAGS_COMPILE = toString [ "-Wno-error=maybe-uninitialized" ];
+    NIX_CFLAGS_COMPILE = toString [ "-Wno-error=array-bounds" ];
   });
 
 }
