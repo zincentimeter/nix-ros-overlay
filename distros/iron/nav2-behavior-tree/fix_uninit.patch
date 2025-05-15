@@ -1,0 +1,7 @@
+--- a/include/nav2_behavior_tree/bt_action_server_impl.hpp	2025-05-15 17:52:17.094725348 +0800
++++ b/include/nav2_behavior_tree/bt_action_server_impl.hpp	2025-05-15 17:52:31.304997324 +0800
+@@ -146,3 +146,3 @@
+  // set the timeout in seconds for the action server to discard goal handles if not finished
+-  double action_server_result_timeout;
++  double action_server_result_timeout = 0.0f;
+  node->get_parameter("action_server_result_timeout", action_server_result_timeout);
