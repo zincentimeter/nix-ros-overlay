@@ -1,0 +1,27 @@
+From b292894066f62a211da9e36eca242465ad92bf40 Mon Sep 17 00:00:00 2001
+From: Tim Clephas <tim.clephas@nobleo.nl>
+Date: Wed, 10 Apr 2024 14:54:43 +0200
+Subject: [PATCH] =?UTF-8?q?Fix=20compiler=20warning=20=E2=80=98error=5Flev?=
+ =?UTF-8?q?el=E2=80=99=20may=20be=20used=20uninitialized?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Signed-off-by: Tim Clephas <tim.clephas@nobleo.nl>
+---
+ nav2_lifecycle_manager/src/lifecycle_manager.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/nav2_lifecycle_manager/src/lifecycle_manager.cpp b/nav2_lifecycle_manager/src/lifecycle_manager.cpp
+index cea3a182602..fdee32f9fc1 100644
+--- a/src/lifecycle_manager.cpp
++++ b/src/lifecycle_manager.cpp
+@@ -177,7 +177,7 @@ LifecycleManager::CreateDiagnostic(diagnostic_updater::DiagnosticStatusWrapper &
+       error_level = diagnostic_msgs::msg::DiagnosticStatus::WARN;
+       message = "Managed nodes have been shut down";
+       break;
+-    case NodeState::UNKNOWN:
++    default:  // NodeState::UNKNOWN
+       error_level = diagnostic_msgs::msg::DiagnosticStatus::ERROR;
+       message = "An error has occurred during a node state transition";
+       break;

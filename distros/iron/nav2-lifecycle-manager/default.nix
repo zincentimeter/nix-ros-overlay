@@ -13,6 +13,8 @@ buildRosPackage {
     sha256 = "a5d609c10e260b0a6a5732de521f1c276461e7b26b6f8ada241d05b25ab72ec7";
   };
 
+  patches = [ ./4253.patch ];
+
   buildType = "ament_cmake";
   buildInputs = [ ament-cmake nav2-common ];
   checkInputs = [ ament-cmake-gtest ament-cmake-pytest ament-lint-auto ament-lint-common ];
