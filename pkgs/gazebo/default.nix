@@ -64,7 +64,7 @@ mkDerivation rec {
 
     # Prevent Gazebo from attempting to use Wayland.
     # As is the case with RViz2, OGRE does not yet support it.
-    "--set WAYLAND_DISPLAY dummy" # "dummy" is arbitrary - it just doesn't exist.
+    "--set QT_QPA_PLATFORM xcb" # "dummy" is arbitrary - it just doesn't exist.
   ];
 
   meta = with lib; {
